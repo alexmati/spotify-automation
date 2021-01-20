@@ -1,7 +1,7 @@
 package main
 
-import ("fmt")
+import "github.com/alexmati/spotify-automation/internal/server"
 
 func main(){
-	fmt.Println("Test")
+	server.Run()
 }
