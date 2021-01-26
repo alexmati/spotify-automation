@@ -2,6 +2,6 @@ package main
 
 import "github.com/alexmati/spotify-automation/internal/server"
 
-func main(){
+func main() {
 	server.Run()
 }
