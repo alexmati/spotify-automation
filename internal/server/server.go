@@ -1,6 +1,7 @@
 package server
 
 import (
+	"fmt"
 	"html/template"
 	"io/ioutil"
 	"log"
@@ -16,18 +17,21 @@ import (
 func Run() {
 	handler.Templates = template.Must(template.ParseGlob("internal/templates/*.html"))
 	r := mux.NewRouter()
-	r.HandleFunc("/", handler.ConnectedHandler).Methods("GET")
-	r.HandleFunc("/welcome", handler.WelcomeHandler).Methods("GET")
+	r.HandleFunc("/", handler.LoginHandler).Methods("GET")
+	r.HandleFunc("/welcome", handler.CallbackHandler).Methods("GET")
+
+	fs := http.FileServer(http.Dir("./static"))
+	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	cfg, err := getConfig()
 	if err != nil {
-		log.Fatal("error")
+		log.Fatalf("Error:  %v", err)
 	}
 	handler.SetSpotifyClient(cfg.SpotifyClient)
 
 	http.Handle("/", r)
+	fmt.Println("Serving on PORT 8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
-
 }
 
 type Config struct {

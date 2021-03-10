@@ -3,10 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Spotify - Playlist Automation</title>
+        <link rel="stylesheet" type ="text/css" href="/static/stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1><a href="https://accounts.spotify.com/authorize?client_id=98c2db7808974d1aba84d687b4695bc1&response_type=code&redirect_uri=http://localhost:8080/welcome">
-            Log into Spotify Playlist Automation</a>
-        </h1>
+        <div class="centered">
+            <h1>Welcome to Spotify Playlist Automation</h1>
+            <p>Description of Application</p>
+            <a class="test" href="https://accounts.spotify.com/authorize?client_id={{.ClientId}}&response_type=code&redirect_uri={{.RedirectUri}}">LOGIN</a>
+            <p>Dont have a Spotify Account? <a href ="https://www.spotify.com/uk/signup/" target="_blank">Sign up here!</a></p>
+        </div>
     </body>
 </html>

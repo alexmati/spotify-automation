@@ -1,6 +1,6 @@
 .DS_Store
 *.iml
-*.exei
+*.exe
 .idea
 .vscode
 config.yaml

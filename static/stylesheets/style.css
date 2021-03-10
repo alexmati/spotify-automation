@@ -1,0 +1,37 @@
+body{
+    min-height: 100%;
+    background-image: url("/static/img/crowd.jpg");
+    background-size: cover;
+}
+
+.test{
+    padding: 0.6em 2em;
+    border-radius: 1.5em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #FFFFFF;
+    text-align:center;
+    transition: all 0.7s;
+    background-color: #1db954;
+}
+
+.test:hover{
+    color:#FFFFFF;
+    background-color: #1ed760;
+}
+
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 0.7em 0 0.7em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    padding: 1em 0 1em 0;
+}
