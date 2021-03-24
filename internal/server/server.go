@@ -25,7 +25,7 @@ func Run() {
 
 	cfg, err := getConfig()
 	if err != nil {
-		log.Fatalf("Error:  %v", err)
+		log.Fatalf("Error: %v", err)
 	}
 	handler.SetSpotifyClient(cfg.SpotifyClient)
 

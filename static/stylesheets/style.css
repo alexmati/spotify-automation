@@ -1,10 +1,21 @@
-body{
-    min-height: 100%;
-    background-image: url("/static/img/crowd.jpg");
-    background-size: cover;
+p{
+    padding: 1em 0 1em 0;
+    font-size: 20px;
 }
 
-.test{
+a{
+    color: #56d6ff;
+}
+
+.index{
+    background: url(/static/img/vinyl.jpg)  no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.login{
     padding: 0.6em 2em;
     border-radius: 1.5em;
     box-sizing: border-box;
@@ -16,22 +27,30 @@ body{
     background-color: #1db954;
 }
 
-.test:hover{
+.login:hover{
     color:#FFFFFF;
     background-color: #1ed760;
 }
 
-.centered{
-    position: absolute;
-    top: 50%;
+.center{
+    position: fixed;
+    top: 40%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
     padding: 0 0.7em 0 0.7em;
     font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
-
-p{
-    padding: 1em 0 1em 0;
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }

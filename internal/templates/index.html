@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class ="index">
     <head>
         <meta charset="UTF-8">
-        <title>Spotify - Playlist Automation</title>
+        <title>Spotify Playlist Automation</title>
         <link rel="stylesheet" type ="text/css" href="/static/stylesheets/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
+
     <body>
-        <div class="centered">
+        <div class="center">
             <h1>Welcome to Spotify Playlist Automation</h1>
-            <p>Description of Application</p>
-            <a class="test" href="https://accounts.spotify.com/authorize?client_id={{.ClientId}}&response_type=code&redirect_uri={{.RedirectUri}}">LOGIN</a>
-            <p>Dont have a Spotify Account? <a href ="https://www.spotify.com/uk/signup/" target="_blank">Sign up here!</a></p>
+            <p>This application will allow you to automatically add songs from Spotify created playlists! <br>Select a
+                playlist you wish to take new songs from to be added to your own playlist; <br> you then choose to
+                keep or delete them! </p>
+            <a class="login" href="https://accounts.spotify.com/authorize?client_id={{.ClientId}}&response_type=code&redirect_uri={{.RedirectUri}}&scope=playlist-read-private">Login</a>
+            <p>Dont have a Spotify Account? <a href ="https://www.spotify.com/uk/signup/" target="_blank">
+                Sign up here!</a></p>
         </div>
     </body>
 </html>

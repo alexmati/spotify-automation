@@ -2,9 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Username - Spotify Playlist Automation</title>
+        <title>Spotify Playlist Automation</title>
+        <link rel="stylesheet" type ="text/css" href="/static/stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     </head>
+
     <body>
-        <h1>Logged In As - User</h1>
+        <div>
+            <h1>Welcome, {{.DisplayName}}</h1>
+            <p><a href="#">Select Playlist to Add Songs From</a></p>
+            <p><a href="#">Create Playlist</a></p>
+            <p><a href="#">Select Existing Playlist</a></p>
+        </div>
     </body>
-    </html>
+</html>
+
