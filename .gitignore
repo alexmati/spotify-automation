@@ -3,5 +3,5 @@
 *.exe
 .idea
 .vscode
-config.yaml
 /spotify-automation
+config.yaml
