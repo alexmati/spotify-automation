@@ -7,18 +7,24 @@ import (
 	"log"
 	"net/http"
 
-	"gopkg.in/yaml.v2"
-
 	"github.com/alexmati/spotify-automation/internal/handler"
-
 	"github.com/gorilla/mux"
+	"gopkg.in/yaml.v2"
 )
 
 func Run() {
 	handler.Templates = template.Must(template.ParseGlob("internal/templates/*.html"))
+
 	r := mux.NewRouter()
-	r.HandleFunc("/", handler.LoginHandler).Methods("GET")
-	r.HandleFunc("/welcome", handler.CallbackHandler).Methods("GET")
+	r.HandleFunc("/", handler.LoginHandler).Methods(http.MethodGet)
+	r.HandleFunc("/callback", handler.CallbackHandler).Methods(http.MethodGet)
+
+	authRouter := r.NewRoute().Subrouter()
+	authRouter.Use(handler.Authentication)
+	authRouter.HandleFunc("/about", handler.AboutHandler).Methods(http.MethodGet)
+	authRouter.HandleFunc("/create", handler.CreatePlaylistHandler).Methods(http.MethodGet)
+	authRouter.HandleFunc("/playlist", handler.SelectPlaylistHandler).Methods(http.MethodGet)
+	authRouter.HandleFunc("/songs", handler.TopSongsHandler).Methods(http.MethodGet)
 
 	fs := http.FileServer(http.Dir("./static"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))

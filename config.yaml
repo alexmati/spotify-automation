@@ -1,4 +1,4 @@
 spotify_client:
-  client_id: ""
-  client_secret: ""
-  redirect_uri: ""
+  client_id: "98c2db7808974d1aba84d687b4695bc1"
+  client_secret: "21382bb2e0ea4349bb18846abd8fa30a"
+  redirect_uri: "http://localhost:8080/callback"

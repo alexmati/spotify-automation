@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="bg">
+    <head>
+        <meta charset="UTF-8">
+        <title>Spotify Playlist Automation - {{.DisplayName}}</title>
+        <link rel="stylesheet" type ="text/css" href="/static/stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+    </head>
+
+    <body>
+        <div class="nav-bar">
+            <ul>
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="/create">Create Playlist</a></li>
+                <li><a href="/playlist">Select Playlist</a></li>
+                <li><a href="/songs">Your Top Songs</a></li>
+                <li class="user">{{.DisplayName}} <i class="fa-solid fa-user"></i></li>
+            </ul>
+        </div>
+        <div id="panel" class="animate">
+            <h1>Welcome {{.DisplayName}}</h1>
+        </div>
+
+        <div id="media-player" class="animate">
+            <div class="cover-art">
+                <img src="../../static/img/acid.jpg" alt="music-cover" id="cover">
+            </div>
+            <div class="music-info">
+                <h4>Artist Name - Song Name</h4>
+            </div>
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
+            <div class="navigation">
+                <button id="prev" class="action-btn">
+                    <i class="fas fa-backward"></i>
+                </button>
+                <button id="play" class="action-btn action-btn-big">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button id="next" class="action-btn">
+                    <i class="fas fa-forward"></i>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
